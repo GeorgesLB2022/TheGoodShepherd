@@ -3,6 +3,10 @@ const express = require('express')
 const helmet = require('helmet')
 const morgan = require('morgan')
 const mongoose = require('mongoose')
+const userRoute = require('./routes/userRoute')
+const promptRoute = require('./routes/promptRoute')
+const bibleVerseRoute = require('./routes/bibleVerseRoute')
+const dailyMessageRoute = require('./routes/dailyMessageRoute')
 
 var cors = require('cors')
 
@@ -22,7 +26,10 @@ var corsOptions = {
   app.use(express.json())
   app.use(morgan("common"))
 
-  
+  app.use('/api/user', userRoute )
+  app.use('/api/prompt', promptRoute )
+  app.use('/api/verse', bibleVerseRoute )
+  app.use('/api/message', dailyMessageRoute )
 
   app.get('/', (req,res)=>{
     res.send('Hello NODE API')
