@@ -8,6 +8,7 @@ const promptRoute = require('./routes/promptRoute')
 const bibleVerseRoute = require('./routes/bibleVerseRoute')
 const dailyMessageRoute = require('./routes/dailyMessageRoute')
 
+
 var cors = require('cors')
 
 const app = express()
